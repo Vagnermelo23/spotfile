@@ -1,0 +1,84 @@
+/* Estilos para o corpo do documento */
+body {
+    background-color: rgb(59, 88, 93);
+    height: 100vh; /* Define a altura total da viewport */
+    color: black; /* Cor do texto */
+    font-family: sans-serif; /* Fonte padrão */
+    display: flex; /* Flex container para alinhar verticalmente */
+    flex-direction: column; /* Direção do conteúdo flexível */
+    align-items: center; /* Alinhamento central vertical */
+    justify-content: center; /* Alinhamento central horizontal */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilos para a seção #parte1 */
+#parte1 {
+    display: flex; /* Flex container para alinhar horizontalmente */
+    flex-direction: row; /* Direção do conteúdo flexível */
+    justify-content: space-between; /* Espaço entre os elementos filhos */
+    align-items: center; /* Alinhamento central vertical */
+    width: 100%; /* Largura total */
+    max-width: 600px; /* Largura máxima */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilos para a seção #parte2 */
+#parte2 {
+    display: flex; /* Flex container para alinhar horizontalmente */
+    flex-direction: row; /* Direção do conteúdo flexível */
+    justify-content: space-around; /* Espaço ao redor dos elementos filhos */
+    align-items: center; /* Alinhamento central vertical */
+    width: 100%; /* Largura total */
+    max-width: 600px; /* Largura máxima */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+/* Estilos para os botões */
+.button {
+    font-size: 1.5em; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor do mouse */
+}
+
+.button2 {
+    font-size: 3em; /* Tamanho da fonte */
+}
+
+.button3 {
+    font-size: 4em; /* Tamanho da fonte */
+}
+
+/* Estilos para a imagem #capa */
+#capa { 
+    width: 450px; /* Largura da imagem da capa */
+}
+
+/* Estilos para a seção #playlist */
+#playlist {
+    display: flex; /* Flex container para alinhar horizontalmente */
+    flex-direction: row; /* Direção do conteúdo flexível */
+    justify-content: center; /* Centraliza os elementos */
+    margin: 1em 0 4em 0; /* Margem superior e inferior */
+}
+
+/* Estilos para o texto #musica */
+#musica {
+    font-size: 1.6em; /* Tamanho da fonte */
+    font-weight: bolder; /* Peso da fonte */
+}
+
+/* Estilos para o elemento #barra (barra de progresso) */
+#barra {
+    background-color: rgb(139, 153, 156); /* Cor de fundo da barra */
+    height: 3px; /* Altura da barra */
+    width: 100%; /* Largura total */
+    border-radius: 15px; /* Raio do canto da barra */
+    margin-bottom: 1em; /* Espaçamento inferior */
+}
+
+/* Estilos para o elemento #progresso (indicador de progresso) */
+#progresso {
+    background-color: white; /* Cor de fundo do progresso */
+    height: inherit; /* Altura herda do elemento pai */
+    width: 50%; /* Largura inicial do progresso */
+    border-radius: inherit; /* Herda o raio do canto do elemento pai */
+}
