@@ -1,6 +1,6 @@
 /* Estilos para o corpo do documento */
-body {
-    background-color: rgb(59, 88, 93);
+body {/* Definindo um gradiente linear */
+    background: linear-gradient(to bottom, rgb(50, 88, 93), rgb(29, 40, 42));;
     height: 100vh; /* Define a altura total da viewport */
     color: black; /* Cor do texto */
     font-family: sans-serif; /* Fonte padrão */
@@ -9,6 +9,13 @@ body {
     align-items: center; /* Alinhamento central vertical */
     justify-content: center; /* Alinhamento central horizontal */
     padding: 20px; /* Espaçamento interno */
+}
+
+button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    cursor: pointer; /* Alterado para incluir cursor de ponteiro */
 }
 
 /* Estilos para a seção #parte1 */
@@ -35,16 +42,15 @@ body {
 
 /* Estilos para os botões */
 .button {
-    font-size: 1.5em; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor do mouse */
+    font-size: 1.5em; /* Tamanho da fonte padrão */
 }
 
 .button2 {
-    font-size: 3em; /* Tamanho da fonte */
+    font-size: 3em; /* Tamanho da fonte para botões específicos */
 }
 
 .button3 {
-    font-size: 4em; /* Tamanho da fonte */
+    font-size: 4em; /* Tamanho da fonte para botões específicos */
 }
 
 /* Estilos para a imagem #capa */

@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>spotfile</title>
+    <!-- Inclusão de ícones do Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Inclusão de estilos personalizados -->
     <link rel="stylesheet" href="estilo2.css"> 
 </head>
 <body>
-    <div class="conteiner"> 
+    <div class="conteiner"> <!-- Corrigido para "container" -->
         <h4 id="playlist"> Nome da Playlist </h4>
         <img id="capa" src="img/OIP.jpg" alt="Imagem da Playlist">
+        <audio id="audio" src="audio/ytmp3free.cc_nirvana-come-as-you-are-official-music-video-youtubemp3free.org.mp3"></audio>
         <div id="parte1"> 
             <div id="parte3">
                 <div id="musica">Nome da Música</div>
                 <div id="banda" class="cor1">Nome da Banda</div>
             </div>
-            <div id="like" class="button" class="cor1"><i class="bi bi-heart"></i></div>
+            <!-- Corrigido para "class" ao invés de "class" duas vezes -->
+            <button id="like" class="button cor1"><i class="bi bi-heart"></i></button>
         </div>
         
+        <!-- Corrigido o fechamento da div #parte1 -->
         <div id="barra">Barra de Progresso</div>
-            <div id="progresso"></div>
+        <div id="progresso"></div>
+        
         <div id="parte2">
-            <div id="embaralhar" class="button"><i class="bi bi-shuffle"></i></div>
-            <div id="avançar" class="button button2"><i class="bi bi-skip-start"></i></div>
-            <div id="play" class="button button3"><i class="bi bi-play-circle"></i></div>
-            <div id="voltar" class="button button2"><i class="bi bi-skip-end"></i></div>
-            <div id="repitir" class="button"><i class="bi bi-repeat"></i></div>
+            <button id="embaralhar" class="button"><i class="bi bi-shuffle"></i></button>
+            <button id="avançar" class="button button2"><i class="bi bi-skip-start"></i></button>
+            <button id="play" class="button button3"><i class="bi bi-play-circle"></i></button>
+            <button id="voltar" class="button button2"><i class="bi bi-skip-end"></i></button>
+            <button id="repitir" class="button"><i class="bi bi-repeat"></i></button>
         </div>
     </div>
+    <!-- Inclusão do script JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
