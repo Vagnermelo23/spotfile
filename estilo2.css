@@ -1,29 +1,37 @@
 /* Estilos para o corpo do documento */
-body {/* Definindo um gradiente linear */
-    background: linear-gradient(to bottom, rgb(50, 88, 93), rgb(29, 40, 42));;
-    height: 100vh; /* Define a altura total da viewport */
-    color: black; /* Cor do texto */
+body {
+    background: linear-gradient(to bottom, rgb(50, 88, 93), rgb(29, 40, 42)); /* Gradiente de fundo */
+    height: 100vh; /* Altura total da tela */
+    color: black; /* Cor padrão do texto */
     font-family: sans-serif; /* Fonte padrão */
-    display: flex; /* Flex container para alinhar verticalmente */
-    flex-direction: column; /* Direção do conteúdo flexível */
-    align-items: center; /* Alinhamento central vertical */
-    justify-content: center; /* Alinhamento central horizontal */
+    display: flex;
+    flex-direction: column; /* Layout de coluna para alinhamento central */
+    align-items: center; /* Alinhamento central horizontal */
+    justify-content: center; /* Alinhamento central vertical */
     padding: 20px; /* Espaçamento interno */
+    transition: all 0.25s ease-in-out; /* Transição suave para mudanças de estilo */
 }
 
+/* Estilos específicos para a playlist "start" */
+body.start {
+    background: linear-gradient(to bottom, rgb(218, 5, 9), rgb(73, 3, 4)); /* Cores diferentes para "boomBapFlick" */
+    transition: all 0,25 ease-in-out;
+}
+
+/* Estilos para os botões */
 button {
-    background-color: inherit;
-    color: inherit;
-    border: none;
-    cursor: pointer; /* Alterado para incluir cursor de ponteiro */
+    background-color: inherit; /* Cor de fundo herda do pai */
+    color: inherit; /* Cor do texto herda do pai */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Altera cursor para indicar interatividade */
 }
 
 /* Estilos para a seção #parte1 */
 #parte1 {
-    display: flex; /* Flex container para alinhar horizontalmente */
-    flex-direction: row; /* Direção do conteúdo flexível */
-    justify-content: space-between; /* Espaço entre os elementos filhos */
-    align-items: center; /* Alinhamento central vertical */
+    display: flex; /* Exibe como flex container */
+    flex-direction: row; /* Layout de linha para alinhamento dos elementos */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Alinhamento vertical central */
     width: 100%; /* Largura total */
     max-width: 600px; /* Largura máxima */
     margin-bottom: 20px; /* Espaçamento inferior */
@@ -31,10 +39,10 @@ button {
 
 /* Estilos para a seção #parte2 */
 #parte2 {
-    display: flex; /* Flex container para alinhar horizontalmente */
-    flex-direction: row; /* Direção do conteúdo flexível */
-    justify-content: space-around; /* Espaço ao redor dos elementos filhos */
-    align-items: center; /* Alinhamento central vertical */
+    display: flex; /* Exibe como flex container */
+    flex-direction: row; /* Layout de linha para alinhamento dos elementos */
+    justify-content: space-around; /* Espaço uniforme ao redor dos elementos */
+    align-items: center; /* Alinhamento vertical central */
     width: 100%; /* Largura total */
     max-width: 600px; /* Largura máxima */
     margin-top: 20px; /* Espaçamento superior */
@@ -42,49 +50,49 @@ button {
 
 /* Estilos para os botões */
 .button {
-    font-size: 1.5em; /* Tamanho da fonte padrão */
+    font-size: 1.5em; /* Tamanho padrão dos botões */
 }
 
 .button2 {
-    font-size: 3em; /* Tamanho da fonte para botões específicos */
+    font-size: 3em; /* Tamanho maior para botões específicos */
 }
 
 .button3 {
-    font-size: 4em; /* Tamanho da fonte para botões específicos */
+    font-size: 4em; /* Tamanho ainda maior para o botão de play */
 }
 
 /* Estilos para a imagem #capa */
 #capa { 
-    width: 450px; /* Largura da imagem da capa */
+    width: 450px; /* Largura fixa para a imagem da capa */
 }
 
 /* Estilos para a seção #playlist */
 #playlist {
-    display: flex; /* Flex container para alinhar horizontalmente */
-    flex-direction: row; /* Direção do conteúdo flexível */
-    justify-content: center; /* Centraliza os elementos */
-    margin: 1em 0 4em 0; /* Margem superior e inferior */
+    display: flex; /* Exibe como flex container */
+    flex-direction: row; /* Layout de linha para alinhamento dos elementos */
+    justify-content: center; /* Alinhamento central horizontal */
+    margin: 1em 0 4em 0; /* Margens para espaçamento */
 }
 
 /* Estilos para o texto #musica */
 #musica {
-    font-size: 1.6em; /* Tamanho da fonte */
-    font-weight: bolder; /* Peso da fonte */
+    font-size: 1.6em; /* Tamanho da fonte do nome da música */
+    font-weight: bolder; /* Texto em negrito */
 }
 
 /* Estilos para o elemento #barra (barra de progresso) */
 #barra {
-    background-color: rgb(139, 153, 156); /* Cor de fundo da barra */
+    background-color: rgb(139, 153, 156); /* Cor de fundo da barra de progresso */
     height: 3px; /* Altura da barra */
     width: 100%; /* Largura total */
-    border-radius: 15px; /* Raio do canto da barra */
+    border-radius: 15px; /* Cantos arredondados */
     margin-bottom: 1em; /* Espaçamento inferior */
 }
 
 /* Estilos para o elemento #progresso (indicador de progresso) */
 #progresso {
-    background-color: white; /* Cor de fundo do progresso */
+    background-color: white; /* Cor de fundo do indicador de progresso */
     height: inherit; /* Altura herda do elemento pai */
     width: 50%; /* Largura inicial do progresso */
-    border-radius: inherit; /* Herda o raio do canto do elemento pai */
+    border-radius: inherit; /* Cantos arredondados */
 }

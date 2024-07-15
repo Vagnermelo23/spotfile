@@ -10,28 +10,39 @@
     <link rel="stylesheet" href="estilo2.css"> 
 </head>
 <body>
-    <div class="container"> <!-- Correção: corrigido para "container" -->
+    <div class="container">
+        <!-- Título da Playlist -->
         <h4 id="playlist">Nome da Playlist</h4>
-        <img id="capa" >
+        <!-- Imagem da Capa da Música -->
+        <img id="capa">
+        <!-- Elemento de Áudio para Reprodução -->
         <audio id="audio"></audio>
         <div id="parte1"> 
             <div id="parte3">
+                <!-- Nome da Música -->
                 <div id="musica">Nome da Música</div>
+                <!-- Nome da Banda/Artista -->
                 <div id="banda" class="cor1">Nome da Banda</div>
             </div>
-            <!-- Correção: alterado para "class" ao invés de "class" duas vezes -->
+            <!-- Botão de "Curtir" com Ícone -->
             <button id="like" class="button cor1"><i class="bi bi-heart"></i></button>
         </div>
         
-        <!-- Correção: fechamento da div #parte1 -->
+        <!-- Barra de Progresso -->
         <div id="barra">
             <div id="progresso"></div>
         </div>
+        
         <div id="parte2">
+            <!-- Botão para Embaralhar -->
             <button id="embaralhar" class="button"><i class="bi bi-shuffle"></i></button>
+            <!-- Botão para Avançar para a Próxima Música -->
             <button id="avançar" class="button button2"><i class="bi bi-skip-start"></i></button>
+            <!-- Botão de Play/Pause -->
             <button id="play" class="button button3"><i class="bi bi-play-circle"></i></button>
+            <!-- Botão para Voltar para a Música Anterior -->
             <button id="voltar" class="button button2"><i class="bi bi-skip-end"></i></button>
+            <!-- Botão para Repetir -->
             <button id="repitir" class="button"><i class="bi bi-repeat"></i></button>
         </div>
     </div>

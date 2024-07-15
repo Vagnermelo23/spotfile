@@ -1,47 +1,59 @@
-const musicaElement = document.getElementById("musica"); // Seleciona o elemento com id "musica"
-const bandaElement = document.getElementById("banda"); // Seleciona o elemento com id "banda"
-const audioElement = document.getElementById("audio"); // Seleciona o elemento com id "audio"
-const capaElement = document.getElementById("capa"); // Seleciona o elemento com id "capa"
-const playButton = document.getElementById("play"); // Seleciona o elemento com id "play"
-const voltarButton = document.getElementById("voltar"); // Seleciona o elemento com id "voltar"
-const avançarButton = document.getElementById("avançar"); // Seleciona o elemento com id "avançar"
+// Seleção dos elementos no DOM
+const musicaElement = document.getElementById("musica"); // Elemento para exibir o nome da música
+const bandaElement = document.getElementById("banda"); // Elemento para exibir o nome da banda/artista
+const audioElement = document.getElementById("audio"); // Elemento de áudio para reprodução
+const capaElement = document.getElementById("capa"); // Elemento de imagem da capa
+const playButton = document.getElementById("play"); // Botão de play/pause
+const voltarButton = document.getElementById("voltar"); // Botão para voltar para a música anterior
+const avançarButton = document.getElementById("avançar"); // Botão para avançar para a próxima música
 
-// Definição das músicas da playlist com seus respectivos detalhes
-const AsYouHere = {
-    musica: 'AsYouHere',
-    banda: 'TrackTribe',
-    file: 'As_You_Here'
-};
-const boomBapFlick = {
-    musica: 'boomBapFlick',
-    banda: 'quincas moreira',
-    file: 'boom_Bap_Flick'
-};
-const cantHide = {
-    musica: 'cantHide',
-    banda: 'TrackTribe',
-    file: 'cant_Hide'
-};
+// Variáveis de controle
+let isPlaying = false; // Estado de reprodução do áudio
+let index = 0; // Índice da música atual na playlist
 
-let isPlaying = false; // Variável para controlar o estado de reprodução
-let index = 0; // Índice inicial da música que será reproduzida
-const playlist = [AsYouHere, boomBapFlick, cantHide]; // Array que contém todas as músicas da playlist
+// Definição das músicas da playlist com seus detalhes
+const playlist = [
+    {
+        musica: 'AsYouHere',
+        banda: 'TrackTribe',
+        file: 'As_You_Here'
+    },
+    {
+        musica: 'boomBapFlick',
+        banda: 'quincas moreira',
+        file: 'boom_Bap_Flick'
+    },
+    {
+        musica: 'cantHide',
+        banda: 'TrackTribe',
+        file: 'cant_Hide'
+    }
+];
 
 // Função para iniciar a reprodução da música
 function playsong() {
-    playButton.querySelector('.bi').classList.add('bi-pause-circle-fill'); // Altera o ícone do botão de play para indicar que a música está tocando
-    playButton.querySelector('.bi').classList.remove('bi-play-circle'); // Remove o ícone de play
-    playButton.querySelector('.bi').classList.add('bi-pause-circle'); // Adiciona o ícone de pause
-    audioElement.play(); // Inicia a reprodução do áudio
+    // Altera o ícone do botão de play para pause
+    playButton.querySelector('.bi').classList.add('bi-pause-circle-fill');
+    playButton.querySelector('.bi').classList.remove('bi-play-circle');
+    playButton.querySelector('.bi').classList.add('bi-pause-circle');
+    // Inicia a reprodução do áudio
+    audioElement.play();
     isPlaying = true; // Atualiza o estado de reprodução para verdadeiro
+    // Adiciona a classe 'start' ao body para mudar a cor de fundo
+    document.body.classList.add("start");
 }
 
 // Função para pausar a música
 function pausesong() {
-    playButton.querySelector('.bi').classList.remove('bi-pause-circle-fill'); // Remove o ícone de pause
-    playButton.querySelector('.bi').classList.add('bi-play-circle'); // Adiciona o ícone de play
-    audioElement.pause(); // Pausa a reprodução do áudio
+    // Altera o ícone do botão de pause para play
+    playButton.querySelector('.bi').classList.remove('bi-pause-circle-fill');
+    playButton.querySelector('.bi').classList.add('bi-play-circle');
+    playButton.querySelector('.bi').classList.remove('bi-pause-circle');
+    // Pausa a reprodução do áudio
+    audioElement.pause();
     isPlaying = false; // Atualiza o estado de reprodução para falso
+    // Remove a classe 'start' do body para resetar a cor de fundo
+    document.body.classList.remove("start");
 }
 
 // Função para alternar entre play e pause
@@ -55,14 +67,26 @@ function playpause() {
 
 // Função para iniciar a música selecionada
 function iniciarmusica() {
-    capaElement.src = `img/${playlist[index].file}.jpg`; // Define a capa da música atual
-    audioElement.src = `audio/${playlist[index].file}.mp3`; // Define o arquivo de áudio da música atual
-    musicaElement.innerText = playlist[index].musica; // Define o nome da música no elemento com id "musica"
-    bandaElement.innerText = playlist[index].banda; // Define o nome da banda/artista no elemento com id "banda"
-    
+    // Define a capa da música atual
+    capaElement.src = `img/${playlist[index].file}.jpg`;
+    // Define o arquivo de áudio da música atual
+    audioElement.src = `audio/${playlist[index].file}.mp3`;
+    // Define o nome da música no elemento correspondente
+    musicaElement.innerText = playlist[index].musica;
+    // Define o nome da banda/artista no elemento correspondente
+    bandaElement.innerText = playlist[index].banda;
+
+    // Altera a cor de fundo do body com base na música atual
+   
+
     // Inicia a reprodução se já estiver tocando
-    if (isPlaying) {
+    if (isPlaying === false) {
         audioElement.play();
+        document.body.classList.add('start');
+        playButton.querySelector('.bi').classList.add('bi-pause-circle-fill');
+        playButton.querySelector('.bi').classList.remove('bi-play-circle');
+        playButton.querySelector('.bi').classList.add('bi-pause-circle');
+        isPlaying = true;
     }
 }
 
@@ -78,7 +102,8 @@ function avançarmusica() {
     iniciarmusica(); // Inicia a música selecionada
 }
 
-iniciarmusica(); // Inicializa a primeira música da playlist ao carregar a página
+// Inicializa a primeira música da playlist ao carregar a página
+iniciarmusica();
 
 // Adiciona event listeners aos botões
 playButton.addEventListener('click', playpause); // Event listener para o botão de play/pause
