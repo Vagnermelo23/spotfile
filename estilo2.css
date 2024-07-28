@@ -96,3 +96,6 @@ button {
     width: 50%; /* Largura inicial do progresso */
     border-radius: inherit; /* Cantos arredondados */
 }
+.button-ativado {
+    color: rgb(11, 213, 11);
+}
